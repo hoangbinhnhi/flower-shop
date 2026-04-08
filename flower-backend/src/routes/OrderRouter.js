@@ -1,9 +1,9 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
+const OrderController = require('../controllers/OrderController');
 
-// Tạm thời để trống hoặc viết một cái route demo cho nó khỏi lỗi
-router.get('/test', (req, res) => {
-    res.send('Order Router đang chạy ngon lành!');
-});
+router.post('/create', OrderController.createOrder);
+router.get('/get-all-order', OrderController.getAllOrder);
+router.put('/update/:id', OrderController.updateOrder);
 
 module.exports = router;
